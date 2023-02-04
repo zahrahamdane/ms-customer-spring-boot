@@ -49,9 +49,6 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public Customer updateCustomer(Customer customer) {
-        if(customerRepository.findByFirstName(customer.getFirstName())==null) {
-            throw new EntityNotFoundException("The customer doesn't exists");
-        }
         Customer editCustomer=customerRepository.findById(customer.getId()).get();
         editCustomer.setFirstName(customer.getFirstName());
         editCustomer.setLastName(customer.getLastName());
