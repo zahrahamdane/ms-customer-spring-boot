@@ -23,5 +23,4 @@ public class MongoDBConfig {
     public MongoTemplate mongoTemplate() {
         return new MongoTemplate(mongoClient(), "db_customers");
     }
-
 }
